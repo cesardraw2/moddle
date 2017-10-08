@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs'),
-    map = require('lodash/collection/map');
+    map = require('lodash/map');
 
 var Moddle = require('../');
 

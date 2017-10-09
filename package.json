@@ -6,7 +6,7 @@
   "module": "lib/index.js",
   "scripts": {
     "all": "npm run lint && npm run test && npm run bundle",
-    "bundle": "webpack -p",
+    "bundle": "NODE_ENV=production webpack",
     "dev": "npm run test -- --watch",
     "lint": "grunt lint",
     "prepublishOnly": "npm run bundle",

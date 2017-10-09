@@ -2,13 +2,15 @@
   "name": "moddle",
   "version": "1.0.0",
   "description": "A library for importing meta-model based file formats into JS",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "dist/bundle.js",
+  "module": "lib/index.js",
   "scripts": {
-    "dev": "grunt auto-test",
-    "all": "grunt",
-    "test": "grunt test"
+    "all": "npm run lint && npm run test && npm run bundle",
+    "bundle": "webpack -p",
+    "dev": "npm run test -- --watch",
+    "lint": "grunt lint",
+    "prepublishOnly": "npm run bundle",
+    "test": "mocha-webpack 'test/spec/*.js' -r test/expect.js -c  --full-trace test --webpack-config webpack.config.js test"
   },
   "repository": {
     "type": "git",
@@ -34,20 +36,25 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-env": "^1.6.0",
     "chai": "^1.10.0",
     "eslint": "^3.19.0",
     "eslint-plugin-mocha": "^4.11.0",
     "grunt": "~0.4.2",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-connect": "~0.6.0",
-    "grunt-contrib-watch": "~0.5.0",
     "grunt-eslint": "^19.0.0",
-    "grunt-mocha-test": "^0.12.4",
     "grunt-release": "^0.7.0",
     "load-grunt-tasks": "~0.3.0",
-    "mocha": "^2.1.0"
+    "lodash-webpack-plugin": "^0.11.4",
+    "mocha": "^3.0.2",
+    "mocha-webpack": "^1.0.0-rc.1",
+    "webpack": "^3.6.0"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash-es": "^4.17.4"
   }
 }

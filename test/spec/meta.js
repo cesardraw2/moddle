@@ -1,12 +1,11 @@
-'use strict';
+import { createModel } from '../helper';
 
-var Helper = require('../helper');
+import MetaModel from '../fixtures/model/meta';
 
 
 describe('meta', function() {
 
-  var createModel = Helper.createModelBuilder('test/fixtures/model/');
-  var model = createModel([ 'meta' ]);
+  var model = createModel([ MetaModel ]);
 
   it('should have the "meta" attribute', function() {
 
@@ -17,6 +16,7 @@ describe('meta', function() {
     expect(meta).to.exist;
     expect(meta).to.be.an('object');
   });
+
 
   it('should have a "owners" property inside "meta"', function() {
 

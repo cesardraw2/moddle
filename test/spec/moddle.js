@@ -1,12 +1,11 @@
-'use strict';
+import { createModel } from '../helper';
 
-var Helper = require('../helper');
+import PropertiesModel from '../fixtures/model/properties';
 
 
 describe('moddle', function() {
 
-  var createModel = Helper.createModelBuilder('test/fixtures/model/');
-  var model = createModel([ 'properties' ]);
+  var model = createModel([ PropertiesModel ]);
 
 
   it('should provide types', function() {

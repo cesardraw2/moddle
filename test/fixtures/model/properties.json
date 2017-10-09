@@ -13,14 +13,14 @@
       "name": "ComplexAttrs",
       "superClass": [ "Complex" ],
       "properties": [
-        { "name": "attrs", "type": "Attributes", "serialize": "xsi:type" }
+        { "name": "attrs", "type": "Attributes", "xml": { "serialize": "xsi:type" } }
       ]
     },
     {
       "name": "ComplexAttrsCol",
       "superClass": [ "Complex" ],
       "properties": [
-        { "name": "attrs", "type": "Attributes", "isMany": true, "serialize": "xsi:type" }
+        { "name": "attrs", "type": "Attributes", "isMany": true, "xml": { "serialize": "xsi:type" } }
       ]
     },
     {

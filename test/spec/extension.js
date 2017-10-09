@@ -1,16 +1,17 @@
-'use strict';
+import { createModel } from '../helper';
 
-var Helper = require('../helper');
+import BaseModel from '../fixtures/model/extension/base';
+import CustomModel from '../fixtures/model/extension/custom';
+
+import ReplaceModel from '../fixtures/model/replace';
+import RedefineModel from '../fixtures/model/redefine';
 
 
 describe('moddle', function() {
 
-  var createModel = Helper.createModelBuilder('test/fixtures/model/');
-
-
   describe('extension', function() {
 
-    var model = createModel([ 'extension/base', 'extension/custom' ]);
+    var model = createModel([ BaseModel, CustomModel ]);
 
 
     describe('trait', function() {
@@ -131,7 +132,7 @@ describe('moddle', function() {
 
   describe('property replacement', function() {
 
-    var model = createModel([ 'replace' ]);
+    var model = createModel([ ReplaceModel ]);
 
     it('should replace in descriptor', function() {
 
@@ -160,7 +161,7 @@ describe('moddle', function() {
 
   describe('property redefinition', function() {
 
-    var model = createModel([ 'redefine' ]);
+    var model = createModel([ RedefineModel ]);
 
     it('should redefine in descriptor', function() {
 

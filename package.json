@@ -41,7 +41,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-lodash": "^3.2.11",
     "babel-preset-env": "^1.6.0",
-    "chai": "^1.10.0",
+    "chai": "^4.1.2",
     "eslint": "^3.19.0",
     "eslint-plugin-mocha": "^4.11.0",
     "grunt": "~0.4.2",
@@ -50,7 +50,7 @@
     "grunt-release": "^0.7.0",
     "load-grunt-tasks": "~0.3.0",
     "lodash-webpack-plugin": "^0.11.4",
-    "mocha": "^3.0.2",
+    "mocha": "^4.0.1",
     "mocha-webpack": "^1.0.0-rc.1",
     "webpack": "^3.6.0"
   },

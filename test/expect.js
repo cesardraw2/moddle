@@ -1,3 +1,7 @@
+require('babel-register')({
+  ignore: /node_modules\/(?!lodash-es)/
+});
+
 var chai = require('chai');
 var matchers = require('./matchers');
 

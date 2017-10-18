@@ -5,12 +5,12 @@
   "main": "dist/bundle.js",
   "module": "lib/index.js",
   "scripts": {
-    "all": "npm run lint && npm run test && npm run bundle",
+    "all": "run-s lint test bundle",
     "bundle": "NODE_ENV=production webpack",
-    "dev": "npm run test -- --watch",
-    "lint": "grunt lint",
-    "prepublishOnly": "npm run bundle",
-    "test": "mocha-webpack 'test/spec/*.js' -r test/expect.js -c  --full-trace test --webpack-config webpack.config.js test"
+    "dev": "npm test -- --watch",
+    "lint": "eslint 'lib/**/*.js' 'test/**/*.js'",
+    "prepublishOnly": "run-s bundle",
+    "test": "mocha --full-trace"
   },
   "repository": {
     "type": "git",
@@ -40,18 +40,15 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-lodash": "^3.2.11",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "eslint": "^3.19.0",
+    "eslint": "^4.9.0",
     "eslint-plugin-mocha": "^4.11.0",
-    "grunt": "~0.4.2",
-    "grunt-cli": "^1.2.0",
-    "grunt-eslint": "^19.0.0",
-    "grunt-release": "^0.7.0",
-    "load-grunt-tasks": "~0.3.0",
     "lodash-webpack-plugin": "^0.11.4",
     "mocha": "^4.0.1",
-    "mocha-webpack": "^1.0.0-rc.1",
+    "npm-run-all": "^4.1.1",
+    "source-map-support": "^0.5.0",
     "webpack": "^3.6.0"
   },
   "dependencies": {

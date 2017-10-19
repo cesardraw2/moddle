@@ -50,6 +50,6 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "lodash-es": "^4.17.4"
+    "min-dash": "github:bpmn-io/min-dash"
   }
 }

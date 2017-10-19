@@ -2,13 +2,14 @@ var path = require('path');
 
 var webpack = require('webpack');
 
-var LodashPlugin = require('lodash-webpack-plugin');
-
 module.exports = {
-  entry: './lib/index.js',
+  entry: {
+    'bundle': [ './lib/index.js' ],
+    'bundle.min': [ './lib/index.js' ]
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     library: 'Moddle',
     libraryTarget: 'umd'
   },
@@ -29,8 +30,9 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new LodashPlugin({
-      'collections': true
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      parallel: true
     })
   ],
   devtool: 'source-map'

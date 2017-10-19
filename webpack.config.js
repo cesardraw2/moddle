@@ -14,10 +14,18 @@ module.exports = {
   },
   target: 'node',
   module: {
-    rules: [{
-      use: 'babel-loader',
-      test: /\.js$/
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+          presets: [
+            [ 'env', { loose: true, modules: false } ]
+          ]
+        }
+      }
+    ]
   },
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),

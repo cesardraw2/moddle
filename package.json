@@ -50,6 +50,6 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "min-dash": "github:bpmn-io/min-dash"
+    "min-dash": "^1.0.0"
   }
 }
